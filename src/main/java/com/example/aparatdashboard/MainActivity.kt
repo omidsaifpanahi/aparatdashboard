@@ -1,3 +1,4 @@
+// src/main/com/example/aparatdashboard/MainActivity.kt
 package com.example.aparatdashboard
 
 import android.Manifest
@@ -45,6 +46,11 @@ class MainActivity : AppCompatActivity() {
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        if (!CookieStore.hasCookie(this)) {
+            startActivity(Intent(this, CookieInputActivity::class.java))
+            finish()
+            return
+        }
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -82,23 +88,7 @@ class MainActivity : AppCompatActivity() {
         binding.statusText.text = "در حال دریافت اطلاعات..."
         binding.refreshButton.isEnabled = false
 
-        val cookieString = """
-            AFCN=177960625054066;
-            _ga_JEXYQPYX7Z=GS2.1.s1783852554$o89$g1$t1783852568$j46$l0$h0;
-            _ga=GA1.1.394693467.1780137421;
-            _clck=1en5y61%5E2%5Eg7o%5E0%5E2341;
-            _ym_uid=1780139265763811363;
-            _ym_d=1780139265;
-            analytics_token=6b723f42-4269-64e9-6867-aec4fdf27c7a;
-            _yngt=01KSYGC152WE42BZMQ7VSDGC8V;
-            theme=light;
-            deviceCategory=high;
-            _ga_1Z48BYP1WP=GS2.1.s1783067387$o1$g1$t1783067742$j57$l0$h0;
-            AuthV1=PUT_YOUR_REAL_AUTH_HERE;
-            devicetype=null;
-            _ym_isad=2;
-            _clsk=1gja6n6%5E1783852557051%5E1%5E0%5Eb.clarity.ms%2Fcollect
-        """.trimIndent().replace("\n", "").replace("  ", " ")
+        val cookieString = CookieStore.getCookie(this)
 
         val request = Request.Builder()
             .url("https://www.aparat.com/api/fa/v1/user/dashboard/stat")

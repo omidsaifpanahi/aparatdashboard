@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- path: src/main/res/layout/activity_cookie_input.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="کوکی حساب آپارات را وارد کنید"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/etCookie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="cookie / AuthV1"
+        android:inputType="textNoSuggestions"
+        android:minLines="4"
+        android:gravity="top"
+        android:padding="12dp" />
+
+    <Button
+        android:id="@+id/btnSaveCookie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ذخیره و ادامه"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>

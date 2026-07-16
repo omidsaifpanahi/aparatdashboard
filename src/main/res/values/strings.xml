@@ -1,3 +1,4 @@
+<!-- path: src/main/res/values/strings.xml -->
 <resources>
     <string name="app_name">Aparat Dashboard</string>
     <string name="loading">در حال دریافت اطلاعات...</string>
