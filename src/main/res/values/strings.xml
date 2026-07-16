@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Aparat Dashboard</string>
+    <string name="loading">در حال دریافت اطلاعات...</string>
+    <string name="refresh">به‌روزرسانی آمار</string>
+    <string name="date_range">بازه زمانی: -</string>
+    <string name="followers">دنبال‌کننده‌ها</string>
+    <string name="total_views">بازدید کل</string>
+    <string name="watch_time">زمان تماشا</string>
+    <string name="today_views">بازدید امروز</string>
+    <string name="month_views">بازدید ماه</string>
+    <string name="notifications_count">نوتیفیکیشن‌ها</string>
+    <string name="chart_title">آمار 8 روز اخیر</string>
+</resources>
